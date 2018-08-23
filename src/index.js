@@ -6,6 +6,8 @@ import {
   remove as removeCookie,
 } from 'es-cookie'
 
+const windowExists = typeof window !== 'undefined'
+
 export default class PersistentDismissable extends React.Component {
   static propTypes = {
     children: PropTypes.func.isRequired,
@@ -21,7 +23,7 @@ export default class PersistentDismissable extends React.Component {
     super(props)
 
     this.state = {
-      dismissed: window ? Boolean(getCookie(props.name)) : false,
+      dismissed: windowExists ? Boolean(getCookie(props.name)) : false,
     }
   }
 
@@ -30,7 +32,7 @@ export default class PersistentDismissable extends React.Component {
 
     this.setState({ dismissed: true })
 
-    if (window) setCookie(name, true, { path, expires })
+    if (windowExists) setCookie(name, true, { path, expires })
   }
 
   undismiss = () => {
@@ -38,7 +40,7 @@ export default class PersistentDismissable extends React.Component {
 
     this.setState({ dismissed: false })
 
-    if (window) removeCookie(name, { path, expires })
+    if (windowExists) removeCookie(name, { path, expires })
   }
 
   render() {
