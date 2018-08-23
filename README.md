@@ -1,8 +1,7 @@
 # react-persistent-dismissable
 
 React component to persistently dismiss children. It does so by setting a
-cookie on the user's browser for a given key to remember if a particular key
-was dismissed previously.
+cookie on the user's browser for a given key.
 
 This component uses the [Render Props][render-props] pattern and does not
 handle any rendering for you. Instead, it provides the data and functions
