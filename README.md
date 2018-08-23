@@ -32,7 +32,7 @@ import cn from 'classnames'
 import PersistentDismissable from 'react-persistent-dismissable'
 
 const MyNotice = () => (
-  <PersistentDismissable generateIdFrom="myNoticeId">
+  <PersistentDismissable name="myNotice">
     {({ dismiss, dimissed }) => (
       <div className={cn('notice', dismissed && 'notice--dismissed')}>
         <p>Hey, read me! I am a notice.</p>
