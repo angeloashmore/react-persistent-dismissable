@@ -34,7 +34,7 @@ const MyNotice = () => (
   <PersistentDismissable generateIdFrom="myNoticeId">
     {({ dismiss, dimissed }) => (
       <div className={cn('notice', dismissed && 'notice--dismissed')}>
-        <p>Hey, read me! I'm a notice.</p>
+        <p>Hey, read me! I am a notice.</p>
         <button onClick={dismiss}>Close me</button>
       </div>
     )}
