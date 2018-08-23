@@ -28,6 +28,7 @@ notice was closed by setting a cookie.
 
 ```js
 import React from 'react'
+import cn from 'classnames'
 import PersistentDismissable from 'react-persistent-dismissable'
 
 const MyNotice = () => (
