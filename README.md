@@ -50,11 +50,11 @@ presentation aspects.
 
 ## Props
 
-| Name          | Type                | Description                                                                                                                                                 |
-| ------------- | ------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **`name`**    | `String` (required) | Unique name of the thing to be dismissed. This is what identifies the cookie.                                                                               |
-| **`path`**    | `String`            | URL path to scope the cookie. This usually can be left to the default. Default: `/`.                                                                        |
-| **`expires`** | `Number` or `Date`  | If given a `Number`, it is the number of days the cookie should persist. If given a `Date`, it is the date the cookie should expire. Default: never expire. |
+| Name          | Type               | Description                                                                                                                                                 |
+| ------------- | ------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **`name`**    | `String`           | **Required**. Unique name of the thing to be dismissed. This is what identifies the cookie.                                                                 |
+| **`path`**    | `String`           | URL path to scope the cookie. This usually can be left to the default. Default: `/`.                                                                        |
+| **`expires`** | `Number` or `Date` | If given a `Number`, it is the number of days the cookie should persist. If given a `Date`, it is the date the cookie should expire. Default: never expire. |
 
 The `children` prop will receive the following variables:
 
