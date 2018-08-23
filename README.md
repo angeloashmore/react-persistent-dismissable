@@ -52,7 +52,7 @@ presentation aspects.
 
 | Name          | Type               | Description                                                                                                                                                 |
 | ------------- | ------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **`name`**    | `String`           | **Required**. Unique name of the thing to be dismissed. This is what identifies the cookie.                                                                 |
+| **`name`**    | `String`           | **Required**. Unique name of the children to be dismissed. This is what identifies the cookie.                                                              |
 | **`path`**    | `String`           | URL path to scope the cookie. This usually can be left to the default. Default: `/`.                                                                        |
 | **`expires`** | `Number` or `Date` | If given a `Number`, it is the number of days the cookie should persist. If given a `Date`, it is the date the cookie should expire. Default: never expire. |
 
@@ -62,6 +62,6 @@ The `children` prop will receive the following variables:
 | --------------- | ---------- | ----------------------------------------------- |
 | **`dismissed`** | `Boolean`  | Boolean determining if the child was dismissed. |
 | **`dismiss`**   | `Function` | Function to dismiss the child.                  |
-| **`undismiss`** | `Function` | Function to undo the dismissal of the child.    |
+| **`undismiss`** | `Function` | Function to undo the child dismissal.           |
 
 [render-props]: https://reactjs.org/docs/render-props.html
