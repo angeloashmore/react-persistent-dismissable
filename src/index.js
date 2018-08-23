@@ -21,7 +21,7 @@ export default class PersistentDismissable extends React.Component {
     super(props)
 
     this.state = {
-      dismissed: Boolean(getCookie(props.name)),
+      dismissed: window ? Boolean(getCookie(props.name)) : false,
     }
   }
 
@@ -29,14 +29,16 @@ export default class PersistentDismissable extends React.Component {
     const { name, path, expires } = this.props
 
     this.setState({ dismissed: true })
-    setCookie(name, true, { path, expires })
+
+    if (window) setCookie(name, true, { path, expires })
   }
 
   undismiss = () => {
     const { name, path, expires } = this.props
 
     this.setState({ dismissed: false })
-    removeCookie(name, { path, expires })
+
+    if (window) removeCookie(name, { path, expires })
   }
 
   render() {
