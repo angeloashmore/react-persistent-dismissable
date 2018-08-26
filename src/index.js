@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 
 const get = key => {
   try {
-    window.localStorage.getItem(key)
+    return window.localStorage.getItem(key)
   } catch (e) {
     console.error(e)
     return undefined
@@ -42,7 +42,7 @@ export default class PersistentDismissable extends React.Component {
 
   dismiss = () => {
     this.setState({ dismissed: true })
-    set(this.props.name, true)
+    set(this.props.name, new Date().getTime())
   }
 
   undismiss = () => {
