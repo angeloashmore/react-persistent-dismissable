@@ -1,7 +1,7 @@
 # react-persistent-dismissable
 
-React component to persistently dismiss children. It does so by setting a
-cookie on the user's browser for a given key.
+React component to persistently dismiss children. It remembers by setting a
+value in `localStorage` on the user's browser for a given key.
 
 This component uses the [Render Props][render-props] pattern and does not
 handle any rendering for you. Instead, it provides the data and functions
@@ -24,7 +24,8 @@ button is clicked, the `dismissed` variable becomes `true` which will add the
 `notice--dismissed` class. The class would likely hide the notice.
 
 After clicking the close button, `PersistentDismissable` will remember the
-notice was closed by setting a cookie.
+notice was closed by setting a `localStorage` value to `true` using `name` as
+the key.
 
 ```js
 import React from 'react'
@@ -50,11 +51,9 @@ presentation aspects.
 
 ## Props
 
-| Name          | Type               | Description                                                                                                                                                 |
-| ------------- | ------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **`name`**    | `String`           | **Required**. Unique name of the children to be dismissed. This is what identifies the cookie.                                                              |
-| **`path`**    | `String`           | URL path to scope the cookie. This usually can be left to the default. Default: `/`.                                                                        |
-| **`expires`** | `Number` or `Date` | If given a `Number`, it is the number of days the cookie should persist. If given a `Date`, it is the date the cookie should expire. Default: never expire. |
+| Name       | Type     | Description                                                                                                  |
+| ---------- | -------- | ------------------------------------------------------------------------------------------------------------ |
+| **`name`** | `String` | **Required**. Unique name of the children to be dismissed. This is what identifies the `localStorage` value. |
 
 The `children` prop will receive the following variables:
 
