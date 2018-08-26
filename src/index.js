@@ -5,7 +5,6 @@ const get = key => {
   try {
     return window.localStorage.getItem(key)
   } catch (e) {
-    console.error(e)
     return undefined
   }
 }
@@ -14,7 +13,7 @@ const set = (key, val) => {
   try {
     window.localStorage.setItem(key, val)
   } catch (e) {
-    console.error(e)
+    // do nothing
   }
 }
 
@@ -22,7 +21,7 @@ const remove = key => {
   try {
     window.localStorage.removeItem(key)
   } catch (e) {
-    console.error(e)
+    // do nothing
   }
 }
 
