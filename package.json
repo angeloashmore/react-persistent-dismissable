@@ -24,6 +24,7 @@
   "author": "Angelo Ashmore",
   "license": "MIT",
   "dependencies": {
+    "idb-keyval": "^3.1.0",
     "prop-types": "^15.6.2"
   },
   "devDependencies": {
