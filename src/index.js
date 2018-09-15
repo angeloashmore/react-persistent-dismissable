@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { get, set, del } from 'idb-keyval'
+import { get, set, del } from './idb-keyval'
 
 export default class PersistentDismissable extends React.Component {
   static propTypes = {
