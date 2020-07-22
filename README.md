@@ -3,8 +3,12 @@
 React component to persistently dismiss (or undismiss) anything. It remembers by
 setting a value using `IndexedDB` on the user's browser for a given key.
 
+## Status
+
 [![npm version](https://img.shields.io/npm/v/react-persistent-dismissable?style=flat-square)](https://www.npmjs.com/package/react-persistent-dismissable)
 [![Build Status](https://img.shields.io/github/workflow/status/angeloashmore/react-persistent-dismissable/CI?style=flat-square)](https://github.com/angeloashmore/react-persistent-dismissable/actions?query=workflow%3ACI)
+
+## Installation
 
 ```sh
 npm install --save react-persistent-dismissable
@@ -38,7 +42,7 @@ const MyNotice = () => {
 
 ## API
 
-```js
+```typescript
 usePersistentDismissable(key: string, initial?: boolean) => [boolean, dismiss: () => void, undismiss: () => void]
 ```
 
@@ -47,3 +51,7 @@ fallback value. The key should be unique within your whole app.
 
 The initial value is used while the hook reads the user's IndexedDB data. Once
 the database returns the persisted data, `dismissed` will update.
+
+Calling `dismiss` will change `dimissed` to `true`.
+
+Calling `undismiss` will change `dimissed` to `false`.
