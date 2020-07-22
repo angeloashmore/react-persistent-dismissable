@@ -1,29 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-
-const get = key => {
-  try {
-    return window.localStorage.getItem(key)
-  } catch (e) {
-    return undefined
-  }
-}
-
-const set = (key, val) => {
-  try {
-    window.localStorage.setItem(key, val)
-  } catch (e) {
-    // do nothing
-  }
-}
-
-const remove = key => {
-  try {
-    window.localStorage.removeItem(key)
-  } catch (e) {
-    // do nothing
-  }
-}
+import { get, set, del } from './idb-keyval'
 
 export default class PersistentDismissable extends React.Component {
   static propTypes = {
@@ -35,8 +12,12 @@ export default class PersistentDismissable extends React.Component {
     super(props)
 
     this.state = {
-      dismissed: Boolean(get(props.name)),
+      dismissed: true,
     }
+  }
+
+  componentDidMount() {
+    get(this.props.name).then(val => this.setState({ dismissed: Boolean(val) }))
   }
 
   dismiss = () => {
@@ -46,7 +27,7 @@ export default class PersistentDismissable extends React.Component {
 
   undismiss = () => {
     this.setState({ dismissed: false })
-    remove(this.props.name)
+    del(this.props.name)
   }
 
   render() {
