@@ -1,6 +1,6 @@
 {
   "name": "react-persistent-dismissable",
-  "version": "0.3.1",
+  "version": "0.4.1",
   "description": "React component to dismiss children indefinitely",
   "main": "dist/react-persistent-dismissable.js",
   "module": "dist/react-persistent-dismissable.modern.js",
