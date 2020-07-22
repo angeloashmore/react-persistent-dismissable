@@ -36,8 +36,7 @@
   "author": "Angelo Ashmore",
   "license": "MIT",
   "dependencies": {
-    "idb-keyval": "^3.2.0",
-    "prop-types": "^15.6.2"
+    "idb-keyval": "^3.2.0"
   },
   "devDependencies": {
     "@babel/plugin-proposal-nullish-coalescing-operator": "^7.10.1",
